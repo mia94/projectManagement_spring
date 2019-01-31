@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.yi.domain.ProjectContentVO;
 import com.yi.domain.ProjectVO;
 import com.yi.service.ProjectService;
 
@@ -28,4 +29,51 @@ public class ProjectController {
 		List<ProjectVO> list = service.select();
 		model.addAttribute("list", list);
 	}
+	
+	@RequestMapping(value="register", method=RequestMethod.GET)
+	public void registerGet() {
+		logger.info("register -------------- GET");
+	}
+	
+	@RequestMapping(value="register", method=RequestMethod.POST)
+	public String registerPost(ProjectVO pVO, ProjectContentVO cVO) {
+		logger.info("register -------------- POST");
+		
+		service.insert(pVO, cVO);
+		return "redirect:/project/list";
+	}
+	
+	
+	@RequestMapping(value="modify")
+	public void modify() {
+		logger.info("modify -------------- GET");
+	}
+	
+	@RequestMapping(value="read", method=RequestMethod.GET)
+	public void read() {
+		logger.info("read -------------- GET");
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

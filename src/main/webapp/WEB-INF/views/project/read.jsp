@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -13,31 +12,31 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<div class="container">
-	  <h2>Hover Rows</h2>
-	  <p>The .table-hover class enables a hover state on table rows:</p>            
-	  <table class="table table-striped">
-	    <thead>
-	      <tr>
-	       	<th>프로젝트이름</th>
+	  <h2>Basic Table</h2>
+	  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
+	  <table class="table">
+	    <tr>
+			<th>프로젝트 이름</th>
+			<td>${map.project.project_name }</td>
+		</tr>
+		<tr>
+			<th>프로젝트 내용</th>
+			<td>${map.content.content }</td>
+		</tr>
+		<tr>
 			<th>시작날짜</th>
+			<td><fmt:formatDate value="${map.project.startdate }" type="date" dateStyle="long"/></td>
+		</tr>
+		<tr>
 			<th>종료날짜</th>
+			<td><fmt:formatDate value="${map.project.enddate }" type="date" dateStyle="long"/></td>
+		</tr>
+		<tr>
 			<th>상태</th>
-	      </tr>
-	    </thead>
-	    <tbody>
-		     <c:forEach var="item" items="${list }">
-				<tr>
-					<td><a href="read.do?no=${item.project_no }">${item.project_name }</a></td>
-					<td><fmt:formatDate value="${item.startdate }" type="date" dateStyle="long"/></td>
-					<td><fmt:formatDate value="${item.enddate }" type="date" dateStyle="long"/></td>
-					<td>${item.progress }</td>
-				</tr>
-			 </c:forEach>
-	    </tbody>
+			<td>${map.project.progress }</td>
+		</tr>
 	  </table>
 	</div>
-
 </body>
 </html>

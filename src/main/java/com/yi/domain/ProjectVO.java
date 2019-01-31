@@ -2,10 +2,14 @@ package com.yi.domain;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class ProjectVO {
 	private int project_no;
 	private String project_name;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date startdate;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date enddate;
 	private String progress;
 	
