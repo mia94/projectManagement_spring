@@ -46,8 +46,18 @@ public class ProjectController {
 	
 	
 	@RequestMapping(value="modify")
-	public void modify() {
+	public void modify(@RequestParam("project_no") int project_no, Model model) {
 		logger.info("modify -------------- GET");
+		ProjectVO vo = new ProjectVO();
+		vo.setProject_no(project_no);
+		vo = service.selectByNo(vo);
+		
+		ProjectContentVO pVO = new ProjectContentVO();
+		pVO.setProject_no(project_no);
+		pVO = service.selectContentByNo(pVO);
+		
+		model.addAttribute("vo", vo);
+		model.addAttribute("pVO", pVO);
 	}
 	
 	@RequestMapping(value="read", method=RequestMethod.GET)

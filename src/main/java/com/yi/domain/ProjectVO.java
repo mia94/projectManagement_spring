@@ -7,9 +7,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class ProjectVO {
 	private int project_no;
 	private String project_name;
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date startdate;
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date enddate;
 	private String progress;
 	
