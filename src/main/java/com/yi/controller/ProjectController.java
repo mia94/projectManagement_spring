@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.yi.domain.ProjectContentVO;
 import com.yi.domain.ProjectVO;
@@ -50,8 +51,17 @@ public class ProjectController {
 	}
 	
 	@RequestMapping(value="read", method=RequestMethod.GET)
-	public void read() {
+	public void read(@RequestParam("project_no") int project_no, Model model) {
 		logger.info("read -------------- GET");
+		ProjectVO vo = new ProjectVO();
+		vo.setProject_no(project_no);
+		vo = service.selectByNo(vo);
+		
+		ProjectContentVO pVO = new ProjectContentVO();
+		pVO.setProject_no(project_no);
+		pVO = service.selectContentByNo(pVO);
+		model.addAttribute("vo", vo);
+		model.addAttribute("pVO", pVO);
 	}
 }
 

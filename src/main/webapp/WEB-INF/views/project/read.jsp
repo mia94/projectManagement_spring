@@ -18,25 +18,30 @@
 	  <table class="table">
 	    <tr>
 			<th>프로젝트 이름</th>
-			<td>${map.project.project_name }</td>
+			<td>${vo.project_name }</td>
 		</tr>
 		<tr>
 			<th>프로젝트 내용</th>
-			<td>${map.content.content }</td>
+			<td>${pVO.content }</td>
 		</tr>
 		<tr>
 			<th>시작날짜</th>
-			<td><fmt:formatDate value="${map.project.startdate }" type="date" dateStyle="long"/></td>
+			<td><fmt:formatDate value="${vo.startdate }" type="date" dateStyle="long"/></td>
 		</tr>
 		<tr>
 			<th>종료날짜</th>
-			<td><fmt:formatDate value="${map.project.enddate }" type="date" dateStyle="long"/></td>
+			<td><fmt:formatDate value="${vo.enddate }" type="date" dateStyle="long"/></td>
 		</tr>
 		<tr>
 			<th>상태</th>
-			<td>${map.project.progress }</td>
+			<td>${vo.progress }</td>
 		</tr>
 	  </table>
+	  <p>
+		<a href="${pageContext.request.contextPath }/project/modify?project_no=${vo.project_no }">[수정]</a>
+		<a href="${pageContext.request.contextPath }/project/delete?project_no=${vo.project_no }" id="delBtn">[삭제]</a>
+		<a href="${pageContext.request.contextPath }/project/list">[돌아가기]</a>
+	</p>
 	</div>
 </body>
 </html>
