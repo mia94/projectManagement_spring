@@ -63,6 +63,15 @@ public class ProjectController {
 		model.addAttribute("vo", vo);
 		model.addAttribute("pVO", pVO);
 	}
+	
+	@RequestMapping(value="delete", method=RequestMethod.GET)
+	public String delete(@RequestParam("project_no")int project_no) {
+		logger.info("delete -------------- GET");
+		ProjectVO vo = new ProjectVO();
+		vo.setProject_no(project_no);
+		service.deleteByNo(vo);
+		return "redirect:/project/list";
+	}
 }
 
 

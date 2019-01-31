@@ -9,6 +9,18 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("#delBtn").click(function(){
+			var del = confirm("정말 삭제하시겠습니까?");
+			if(del==true){
+				location.href="${pageContext.request.contextPath }/project/delete?project_no=${vo.project_no }";
+			}
+			return false;
+		})
+	})
+</script>
 <title>Insert title here</title>
 </head>
 <body>
