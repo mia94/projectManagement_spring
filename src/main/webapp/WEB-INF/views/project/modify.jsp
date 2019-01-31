@@ -24,7 +24,8 @@
 <body>
 	<div class="container">
 	  <h2>수정 form</h2>
-	  <form action="/action_page.php">
+	  <form action="modify" method="post">
+	  	<input type="hidden" value="${vo.project_no }" name="project_no">
 	    <div class="form-group">
 	      <label for="email">프로젝트 이름</label>
 	      <input type="text" class="form-control" id="project_name" name="project_name" value="${vo.project_name }">
@@ -35,11 +36,11 @@
 	    </div>
 	    <div class="form-group">
 	      <label for="email">시작날짜</label>
-	      <input type="text" class="form-control" id="startdate" name="startdate" value="${vo.startdate }">
+	      <input type="text" class="form-control" id="startdate" name="startdate" value="${vo.startdate }" placeholder="MM/dd/yyyy">
 	    </div>
 	    <div class="form-group">
 	      <label for="pwd">종료날짜</label>
-	      <input type="text" class="form-control" id="enddate" name="enddate" value="${vo.enddate }">
+	      <input type="text" class="form-control" id="enddate" name="enddate" value="${vo.enddate }" placeholder="MM/dd/yyyy">
 	    </div>
 	    <div class="form-group">
 		 	  <label for="sel1">프로젝트 상태</label>

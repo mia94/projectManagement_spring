@@ -45,8 +45,8 @@ public class ProjectController {
 	}
 	
 	
-	@RequestMapping(value="modify")
-	public void modify(@RequestParam("project_no") int project_no, Model model) {
+	@RequestMapping(value="modify", method=RequestMethod.GET)
+	public void modifyGet(@RequestParam("project_no") int project_no, Model model) {
 		logger.info("modify -------------- GET");
 		ProjectVO vo = new ProjectVO();
 		vo.setProject_no(project_no);
@@ -58,6 +58,17 @@ public class ProjectController {
 		
 		model.addAttribute("vo", vo);
 		model.addAttribute("pVO", pVO);
+	}
+	
+	@RequestMapping(value="modify", method=RequestMethod.POST)
+	public String modifyPost(ProjectVO pVO, ProjectContentVO cVO) {
+		logger.info("modify -------------- Post");
+		System.out.println(pVO);
+		System.out.println(cVO);
+		service.update(pVO, cVO);
+		System.out.println(pVO);
+		System.out.println(cVO);
+		return "redirect:/project/list";
 	}
 	
 	@RequestMapping(value="read", method=RequestMethod.GET)
