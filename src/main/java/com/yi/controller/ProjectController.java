@@ -55,7 +55,7 @@ public class ProjectController {
 		ProjectContentVO pVO = new ProjectContentVO();
 		pVO.setProject_no(project_no);
 		pVO = service.selectContentByNo(pVO);
-		
+		 
 		model.addAttribute("vo", vo);
 		model.addAttribute("pVO", pVO);
 	}
