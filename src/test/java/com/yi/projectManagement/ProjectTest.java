@@ -32,27 +32,23 @@ public class ProjectTest {
 	@Autowired
 	private ProjectService service;
 	
-	//@Test
+	@Test
 	public void test01insert() {
-		
-		
+
 		ProjectVO project = new ProjectVO();
 		project.setProject_name("테스트용 제목");
 		project.setStartdate(new Date());
 		project.setStartdate(new Date());
 		project.setEnddate(new Date());
 		project.setProgress("준비");
-		//pDao.insert(project);
-		
-		
 		
 		ProjectContentVO content = new ProjectContentVO();
 		content.setContent("테스트용 내용");	
 		service.insert(project, content);
-		
+
 	}
 	
-	//@Test
+	@Test
 	public void test02select() {
 		List<ProjectVO> plist = service.select();
 		List<ProjectContentVO> clist = service.selectContent();
@@ -60,7 +56,7 @@ public class ProjectTest {
 		Assert.assertNotNull(clist);
 	}
 	
-	//@Test
+	@Test
 	public void test03selectByNo() {
 		ProjectVO vo = new ProjectVO();
 		vo.setProject_no(11);
@@ -69,8 +65,7 @@ public class ProjectTest {
 		Assert.assertNotNull(vo);
 	}
 	
-	
-	//@Test
+	@Test
 	public void test04update() {
 		ProjectVO vo = new ProjectVO();
 		vo.setProject_no(11);

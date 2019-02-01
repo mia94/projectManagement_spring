@@ -15,8 +15,8 @@
 <body>
 
 	<div class="container">
-	  <h2>Hover Rows</h2>
-	  <p>The .table-hover class enables a hover state on table rows:</p>            
+	  <h2>Project List</h2>
+	  <p>제목을 클릭하면 내용을 볼 수 있습니다.</p>            
 	  <table class="table table-striped">
 	    <thead>
 	      <tr>
