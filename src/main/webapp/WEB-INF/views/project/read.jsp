@@ -21,6 +21,11 @@
 		})
 	})
 </script>
+<style>
+	button a{
+		color:white;
+	}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
@@ -53,9 +58,15 @@
 		</tr>
 	  </table>
 	  <p>
-		<a href="${pageContext.request.contextPath }/project/modify?project_no=${vo.project_no }">[수정]</a>
-		<a href="${pageContext.request.contextPath }/project/delete?project_no=${vo.project_no }" id="delBtn">[삭제]</a>
-		<a href="${pageContext.request.contextPath }/project/list">[돌아가기]</a>
+	  	<button type="button" class="btn btn-info">
+	  		<a href="${pageContext.request.contextPath }/project/modify?project_no=${vo.project_no }">수정</a>
+	  	</button>
+		<button type="button" class="btn btn-danger">
+	  		<a href="${pageContext.request.contextPath }/project/delete?project_no=${vo.project_no }" id="delBtn">삭제</a>
+	  	</button>
+	  	<button type="button" class="btn btn-primary">
+	  		<a href="${pageContext.request.contextPath }/project/list">목록</a>
+	  	</button>
 	</p>
 	</div>
 	

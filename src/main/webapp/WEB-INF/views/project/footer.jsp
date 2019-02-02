@@ -15,5 +15,5 @@
 </style>
 
 	<footer>
-		<p>푸터입니당</p>
+		<p>SeonmiWoo 2019-01-29</p>
 	</footer>
