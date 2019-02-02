@@ -25,6 +25,9 @@
 </head>
 <body>
 	<div class="container">
+	
+	<jsp:include page="header.jsp"></jsp:include>
+	
 	  <h2>Basic Table</h2>
 	  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>            
 	  <table class="table">
