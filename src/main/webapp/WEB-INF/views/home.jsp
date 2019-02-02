@@ -25,5 +25,7 @@
 			<li><a href="${pageContext.request.contextPath }/project/register">Project 추가</a></li>
 		</ul>
 	</div>
+	
+	<jsp:include page="project/footer.jsp"></jsp:include>
 </body>
 </html>

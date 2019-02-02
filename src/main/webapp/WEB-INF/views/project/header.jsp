@@ -3,6 +3,9 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lobster');
+	.container{
+		min-height: 700px;
+	}
 	header{
 		width:100%;
 		height: 100px;
@@ -14,8 +17,8 @@
 		font-family: 'Lobster', cursive;
 	}
 </style>
-	<div class="container">
+
 		<header>
 			<h1>WSM ProjectManagement</h1>
 		</header>
-	</div>
+

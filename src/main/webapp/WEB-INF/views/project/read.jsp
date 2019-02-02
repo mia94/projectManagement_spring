@@ -58,5 +58,7 @@
 		<a href="${pageContext.request.contextPath }/project/list">[돌아가기]</a>
 	</p>
 	</div>
+	
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
