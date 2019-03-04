@@ -15,6 +15,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script>
 	$(function(){
+		//
 		
 		$("#startdate").attr("value", "<fmt:formatDate value='${vo.startdate }' pattern='MM/dd/yyyy'/>");
 		$("#startdate").datepicker();
