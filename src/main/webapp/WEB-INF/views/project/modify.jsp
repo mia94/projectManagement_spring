@@ -15,7 +15,20 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script>
 	$(function(){
-		//
+		
+		var progress = '${vo.progress }';
+		switch(progress){
+		case '준비'   : $("#sel1").val('준비').prop("selected", true);
+        	break;
+		case '진행중'   : $("#sel1").val('진행중').prop("selected", true);
+       		break;
+		case '종료'  : $("#sel1").val('종료').prop("selected", true);
+        	break;
+		case '보류'  : $("#sel1").val('보류').prop("selected", true);
+			break; 
+		default    : $("#sel1").val('준비').prop("selected", true);
+        break;
+		}
 		
 		$("#startdate").attr("value", "<fmt:formatDate value='${vo.startdate }' pattern='MM/dd/yyyy'/>");
 		$("#startdate").datepicker();
